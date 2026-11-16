@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block c %}
+<h2>{{ label }}</h2>
+{% if key == 'ai' %}<p class="note">Roadmap: Python, then Maths and Statistics, then Data Structures, then projects, then specialise in AI/ML, Cyber, Web or Cloud.</p>{% endif %}
+<form class="filter" method="get">
+ <input name="q" placeholder="Search careers" value="{{ request.args.get('q','') }}">
+ <select name="min"><option value="0">Any salary</option>{% for v in (5, 8, 12, 20) %}<option value="{{ v }}" {% if request.args.get('min') == v|string %}selected{% endif %}>Up to {{ v }}+ LPA</option>{% endfor %}</select>
+ <select name="sort"><option value="">Default order</option><option value="salary" {% if request.args.get('sort') == 'salary' %}selected{% endif %}>Highest salary first</option></select>
+ <button class="btn">Apply</button></form>
+<p class="note">{{ lst|length }} careers found</p>
+<div class="grid">{% for c in lst %}
+ <a class="card" href="/career/{{ c.id }}"><h3>{{ c.name }}</h3><p class="sal">{{ c.sal }}</p><p>{{ c.scope }}</p></a>
+{% else %}<p>No careers match. Clear the search or salary filter and try again.</p>{% endfor %}</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block c %}
+<section class="hero">
+ <div class="hole"><i class="g"></i><i class="e"></i><i class="r"></i><i class="k"></i></div>
+ <h1>BhavishyaPath</h1>
+ <p class="tag">Apna raasta khud chuno</p>
+ <p class="sub">Explore {{ n }} careers by stream and subjects, with exams, salary and a clear path after Class 12.</p>
+ <a class="btn" href="#streams">Explore careers</a> <a class="btn ghost" href="/chat">Ask Gyani Baba</a>
+</section>
+<h2 id="streams">Choose your stream</h2>
+<div class="grid">{% for k, s in streams.items() %}
+ <a class="card" href="/stream/{{ k }}"><span class="ic">{{ s[2] }}</span><h3>{{ s[0] }}</h3><p>{{ s[1] }}</p></a>{% endfor %}</div>
+<a class="card baba" href="/chat"><img src="{{ url_for('static', filename='gyani.png') }}" alt=""><div><h3>Gyani Baba, your AI career guide</h3><p>Not sure where to start? Tell Gyani Baba your interests and get career ideas.</p></div></a>
+{% endblock %}

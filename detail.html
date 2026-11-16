@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block c %}
+<article class="card det"><h2>{{ c.name }}</h2>
+<p>{% for s in c.streams %}<span class="tagb">{{ sn[s] }}</span>{% endfor %}</p>
+<h4>Qualification and pathway</h4><p>{{ c.path }}</p>
+<h4>Entrance exams</h4><p>{{ c.exams }}</p>
+<h4>Estimated salary</h4><p class="sal">{{ c.sal }}</p>
+<h4>Career growth and scope</h4><p>{{ c.scope }}</p>
+<a class="btn" href="/chat">Ask Gyani Baba about this</a></article>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block t %}Gyani Baba{% endblock %}{% block c %}
+<div class="win"><div class="wh"><img src="{{ url_for('static', filename='gyani.png') }}" alt=""><b>Gyani Baba</b><a href="/chat/clear">Clear chat</a></div>
+<div class="msgs">
+ <div class="m baba">Namaste! 🙏 Ask me about any stream, career, exam or salary.</div>
+ {% for who, txt in h %}<div class="m {{ who }}">{{ txt }}</div>{% endfor %}</div>
+<form method="post" class="send"><input name="m" placeholder="Ask Gyani Baba anything..." autocomplete="off" autofocus><button class="btn">Send</button></form></div>
+{% endblock %}

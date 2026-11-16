@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BhavishyaPath | {% block t %}Apna raasta khud chuno{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><div class="st"></div>
+<nav><a class="brand" href="/"><img src="{{ url_for('static', filename='gyani.png') }}" alt="Gyani Baba">BhavishyaPath</a>
+<div><a href="/">Home</a><a href="/#streams">Streams</a><a href="/chat">Gyani Baba</a></div></nav>
+<main>{% block c %}{% endblock %}</main>
+<footer>Made by Chahit Singh, Design By Shahid Sekh, Idea By Samdipta</footer>
+</body></html>

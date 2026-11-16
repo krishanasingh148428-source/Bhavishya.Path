@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block c %}
+<h2>{{ s[2] }} {{ s[0] }}: pick your subjects</h2>
+<div class="grid">{% for l, code, ex in s[3] %}
+ <a class="card" href="/careers/{{ key }}/{{ loop.index0 }}"><h3>{{ l }}</h3><p>See careers for this combination</p></a>{% endfor %}</div>
+{% endblock %}
